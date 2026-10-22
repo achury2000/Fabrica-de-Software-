@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es-CO" class="loading">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fábrica de Software de Antioquia · SENA</title>
+<meta name="description" content="Fábrica de Software de Antioquia: desarrollo a medida, laboratorio de testing y fábrica digital de la Unidad de Servicios Tecnológicos del SENA, Medellín.">
+<meta name="theme-color" content="#04141a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fábrica de Software de Antioquia · SENA">
+<meta property="og:description" content="Soluciones digitales a medida, calidad de software y formación. Unidad de Servicios Tecnológicos · CESGE SENA · Medellín.">
+<meta property="og:image" content="media/hero-poster.jpg">
+<link rel="icon" href="img/sena-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+<noscript><style>#boot{display:none}.rv,.ln>span,.w>span{opacity:1!important;transform:none!important}html.loading body{overflow:auto}</style></noscript>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="boot">
+  <canvas id="introGl" aria-hidden="true"></canvas>
+  <div class="intro-ui" id="introUi" hidden>
+    <p class="intro-top">SENA · CESGE · Unidad de Servicios Tecnológicos</p>
+    <div class="intro-bot">
+      <h1 class="intro-title">Fábrica de <b>Software</b> de Antioquia</h1>
+      <p class="intro-hint" id="introHint">Arrastra para girar el logo · toca una pieza</p>
+      <div class="intro-bar"><i id="introBar"></i></div>
+      <button type="button" class="btn intro-go" id="introGo" disabled><span>Entrar a la fábrica</span> &rarr;</button>
+      <button type="button" class="intro-skip" id="introSkip">Saltar intro</button>
+    </div>
+  </div>
+  <div class="boot-in" id="bootTerm">
+    <img class="boot-logo" src="img/sena-logo.png" alt="">
+    <div class="boot-term">
+      <p class="l">&gt; iniciando fábrica de software…</p>
+      <p class="l">&gt; cargando metodologías ágiles… <b>OK</b></p>
+      <p class="l">&gt; compilando calidad… <b>OK</b></p>
+      <p class="l">&gt; desplegando experiencia… <b>OK</b></p>
+    </div>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <div class="boot-pct"><span id="bootPct">0</span>%</div>
+  </div>
+</div>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <a class="brand" href="#inicio" aria-label="Fábrica de Software de Antioquia, ir al inicio">
+    <img src="img/sena-logo.png" alt="SENA" width="40" height="39">
+    <span><b>Fábrica de Software</b><small>de Antioquia · SENA</small></span>
+  </a>
+  <nav id="nav" aria-label="Principal">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#metodologia">Cómo trabajamos</a>
+    <a href="#calidad">Calidad</a>
+    <a href="#formacion">Formación</a>
+    <a href="#trayectoria">Trayectoria</a>
+    <a href="#contacto" class="nav-cta">Contacto</a>
+  </nav>
+  <a class="btn btn-sm mag hdr-cta" href="#contacto">Solicita información</a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><i></i><i></i></button>
+</header>
+
+<nav class="dots" id="dots" aria-label="Secciones">
+  <a href="#inicio" data-t="Inicio"></a><a href="#nosotros" data-t="Nosotros"></a><a href="#servicios" data-t="Servicios"></a>
+  <a href="#metodologia" data-t="Cómo trabajamos"></a><a href="#calidad" data-t="Calidad"></a><a href="#formacion" data-t="Formación"></a>
+  <a href="#trayectoria" data-t="Trayectoria"></a><a href="#contacto" data-t="Contacto"></a>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section id="inicio" class="hero">
+  <video class="hero-vid" muted loop playsinline preload="auto" poster="media/hero-poster.jpg" data-autoplay>
+    <source src="media/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade"></div>
+  <canvas class="net" id="netHero" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="chips-row rv"><span>SENA</span><span>Centro de Servicios y Gestión Empresarial</span><span>Unidad de Servicios Tecnológicos</span></div>
+      <h1 class="hero-h1" aria-label="Fábrica de Software de Antioquia">
+        <span class="ln"><span>Fábrica de</span></span>
+        <span class="ln"><span class="grad">Software</span></span>
+        <span class="ln"><span>de Antioquia</span></span>
+      </h1>
+      <p class="hero-sub rv">Desarrollamos soluciones digitales a medida y fortalecemos su calidad mediante metodologías ágiles, pruebas y conocimiento especializado.</p>
+      <p class="typed rv" aria-hidden="true"><span class="prompt">&gt;</span> soluciones <b id="typed">web</b><i class="caret"></i></p>
+      <div class="hero-cta rv">
+        <a class="btn mag" href="#servicios">Conoce nuestros servicios <span data-ic="arrow"></span></a>
+        <a class="btn ghost mag" href="#contacto">Solicita información</a>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt" aria-hidden="true">
+      <div class="hud hud1"><b data-count="16">0</b><span>servicios en el portafolio</span></div>
+      <div class="hud hud2"><b data-count="5">0</b><span>fases del ciclo de desarrollo</span></div>
+      <div class="hud hud3"><b>10</b><span>años · 2015–2025</span></div>
+      <div class="hud hud4"><i></i><span>Mueve el cursor: el núcleo te sigue</span></div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#nosotros" aria-label="Desplazarse a la siguiente sección"><i></i><span>Desplázate</span></a>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+<!-- ============ NOSOTROS ============ -->
+<section id="nosotros" class="sec">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">01 · Quiénes somos</span>
+      <h2 data-split>Tecnología con propósito público</h2>
+      <p class="lead rv">La Unidad de Servicios Tecnológicos (UST) es un espacio dedicado a prestar servicios técnicos y especiales soportados en tecnologías emergentes, para fortalecer la transformación digital del país. Se articula con la formación, el programa de competitividad y desarrollo tecnológico productivo del SENA, la metodología de fábricas digitales y la estrategia de producción de centros.</p>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-vis rv">
+        <div class="stage-chip glass" aria-hidden="true">Una fábrica en movimiento</div>
+      </div>
+      <div class="pillars">
+        <article class="pillar tilt rv"><span class="pi" data-ic="code"></span><h3>Desarrollo personalizado</h3><p>Soluciones de software web y móvil eficientes, innovadoras y a la medida de cada cliente.</p></article>
+        <article class="pillar tilt rv"><span class="pi" data-ic="valid"></span><h3>Calidad y pruebas</h3><p>Un laboratorio de testing que acompaña todo el ciclo, no solo la entrega final.</p></article>
+        <article class="pillar tilt rv"><span class="pi" data-ic="auto"></span><h3>Agilidad y mejora continua</h3><p>Scrum, Kanban y TDD para entregar valor en ciclos cortos y mejorar siempre.</p></article>
+        <article class="pillar tilt rv"><span class="pi" data-ic="grad"></span><h3>Formación y transferencia</h3><p>Aprendices en práctica, talleres y transferencias de conocimiento.</p></article>
+      </div>
+    </div>
+
+    <div class="goal glass rv">
+      <figure class="ust-ph tilt">
+          <img src="img/ust-oficina.jpg" alt="Entrada de la Unidad de Servicios Tecnológicos del SENA en Medellín" loading="lazy" width="440" height="371">
+          <figcaption><span data-ic="pin"></span> Torre Norte, tercer piso · Medellín</figcaption>
+        </figure>
+      <div><span class="eyebrow">Objetivo general</span>
+      <p>Desarrollamos soluciones de software web y móvil eficientes, innovadoras y personalizadas, que satisfagan las necesidades específicas de nuestros clientes, promoviendo la excelencia en la calidad, la agilidad en el desarrollo y la mejora continua de nuestros procesos.</p></div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel glass rv">
+        <h3><span data-ic="shield"></span> Soporte estratégico</h3>
+        <ul class="tags">
+          <li>Capacidad tecnológica instalada en el Centro de Formación CESGE SENA</li>
+          <li>Programas de formación SENA</li>
+          <li>SENNOVA</li>
+          <li>Sistema de gestión de la calidad</li>
+          <li>Metodologías ágiles · SCRUM</li>
+        </ul>
+      </div>
+      <div class="panel glass rv">
+        <h3><span data-ic="bulb"></span> De dónde nacen los proyectos</h3>
+        <ul class="tags">
+          <li>Banco de proyectos interno</li><li>Grupo de investigación GIGAT</li><li>SENNOVA del centro de formación</li>
+          <li>Clientes internos y externos</li><li>Tendencias tecnológicas</li><li>Apuestas institucionales y/o gubernamentales</li>
+          <li>Agendas regionales de productividad y competitividad</li><li>Línea técnica de servicios tecnológicos: Automatización y TIC</li><li>Articulaciones</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="spsp rv">
+      <div class="spsp-head">
+        <span class="eyebrow">Nuestro principal cliente, el SENA</span>
+        <h3>Estrategia <span class="grad">SENA Provee SENA</span></h3>
+        <p>Una iniciativa que permite reducir costos en licencias de software, fomentar la innovación y fortalecer el conocimiento técnico dentro de la organización.</p>
+      </div>
+      <ul class="spsp-list">
+        <li><b>Autosuficiencia tecnológica</b><span>Disminuir la dependencia de proveedores externos mediante el desarrollo interno de soluciones digitales.</span></li>
+        <li><b>Optimización de recursos</b><span>Reducir costos operativos y mejorar la inversión en infraestructura tecnológica.</span></li>
+        <li><b>Calidad y personalización</b><span>Asegurar que las soluciones cumplan los estándares de calidad y respondan a necesidades específicas del SENA.</span></li>
+        <li><b>Innovación continua</b><span>Fomentar la creación de nuevas herramientas tecnológicas que impulsen la transformación digital de la institución.</span></li>
+      </ul>
+    </div>
+
+    <div class="orbit-block">
+      <div class="orbit-copy rv">
+        <span class="eyebrow">A quién servimos</span>
+        <h3>Un ecosistema de grupos de interés</h3>
+        <p>Los ejercicios de transferencia de conocimiento, las visitas técnicas y los relacionamientos permiten vincular de forma continua a más actores, consolidando alianzas de cooperación y/o prestación de servicios en las áreas de nuestro portafolio.</p>
+        <div class="orbit-info glass" id="orbitInfo" aria-live="polite"><b>Aprendices</b><span>Principal aliado en el desarrollo de los servicios ofertados en el portafolio de la UST.</span></div>
+        <p class="hint">Toca o enfoca un grupo para conocer su papel.</p>
+      </div>
+      <div class="orbit rv" id="orbit" role="group" aria-label="Grupos de interés de la UST">
+        <div class="o-ring r1"></div><div class="o-ring r2"></div>
+        <div class="o-core"><img src="img/sena-logo.png" alt="SENA"><span>UST</span></div>
+        <div class="o-spin" id="orbitSpin"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section id="servicios" class="sec sec-alt">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">02 · Portafolio</span>
+      <h2 data-split>16 servicios para construir, probar y sostener tu software</h2>
+      <p class="lead rv">Elige una categoría o busca por nombre. Cada ficha explica el alcance y te lleva directo a una consulta por correo.</p>
+    </header>
+
+    <div class="svc-tools rv">
+      <label class="search"><span data-ic="search"></span><span class="sr">Buscar servicio</span>
+        <input type="search" id="q" placeholder="Buscar: pruebas, migración, soporte…" autocomplete="off"></label>
+      <div class="tabs" role="tablist" aria-label="Categorías de servicios" id="catTabs"></div>
+    </div>
+
+    <div class="svc-layout">
+      <aside class="svc-vis">
+        <div class="vis-txt"><span class="eyebrow">Cada cubo es un servicio</span><b id="visTitle">Todo el portafolio</b><span id="visDesc"></span>
+          <ul class="legend" id="legend" aria-hidden="true"></ul>
+          <span class="hint">Pasa el cursor por una tarjeta y verás su módulo iluminarse en 3D.</span>
+        </div>
+      </aside>
+      <div>
+        <div class="svc-grid" id="svcGrid"></div>
+        <p class="empty" id="svcEmpty" hidden>No encontramos servicios con esa búsqueda. <button type="button" class="link" id="svcReset">Ver todos</button></p>
+        <p class="svc-foot">¿No sabes por dónde empezar? <a href="#contacto" class="link">Cuéntanos tu necesidad →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="svc-dlg" id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg-card">
+    <button type="button" class="dlg-x" id="dlgX" aria-label="Cerrar ficha">×</button>
+    <div class="dlg-body" id="dlgBody"></div>
+  </div>
+</dialog>
+
+<!-- ============ METODOLOGÍA (scroll-scrub) ============ -->
+<section id="metodologia" class="pin" aria-label="Cómo trabajamos: de la idea al producto">
+  <div class="pin-stage">
+    <canvas id="scrub" aria-hidden="true"></canvas>
+    <div class="pin-shade"></div>
+    <div class="pin-top wrap">
+      <span class="eyebrow">03 · Cómo trabajamos</span>
+      <h2>De la idea al producto,<br><span class="grad">en cinco fases</span></h2>
+    </div>
+    <ol class="rail" id="rail" aria-label="Fases del desarrollo"></ol>
+    <div class="ph-wrap wrap" id="phWrap"></div>
+    <div class="pin-bar" aria-hidden="true"><i id="pinBar"></i></div>
+    <div class="pin-load" id="pinLoad" aria-hidden="true">cargando escena…</div>
+  </div>
+</section>
+
+<section class="sec proc" id="procesos">
+  <video class="bgv" muted loop playsinline preload="none" data-src="media/proceso.mp4" aria-hidden="true"></video>
+  <div class="bgv-shade"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">Metodologías y estrategias</span>
+      <h2 data-split>Agilidad que se nota en cada entrega</h2>
+      <p class="lead rv">Las fábricas de software del SENA implementan metodologías ágiles para garantizar la eficiencia en el desarrollo de productos.</p>
+    </header>
+    <div class="meth-grid">
+      <article class="meth glass tilt rv"><span class="mi" data-ic="sprint"></span><h3>Scrum</h3><p>Permite dividir el desarrollo en <abbr title="Ciclos cortos de trabajo con un objetivo claro">sprints</abbr> cortos, con revisiones periódicas y entrega continua de funcionalidades.</p></article>
+      <article class="meth glass tilt rv"><span class="mi" data-ic="board"></span><h3>Kanban</h3><p>Facilita la gestión visual del flujo de trabajo, identificando cuellos de botella y optimizando la producción.</p></article>
+      <article class="meth glass tilt rv"><span class="mi" data-ic="test"></span><h3><abbr title="Test-Driven Development">TDD</abbr> · Desarrollo basado en pruebas</h3><p>Se basa en crear pruebas automatizadas antes de escribir el código, asegurando calidad y fiabilidad del software.</p></article>
+    </div>
+
+    <h3 class="sub rv">Estrategias para realizar desarrollos</h3>
+    <div class="strat">
+      <div class="st rv"><span class="si" data-ic="auto"></span><b>Adopción de metodologías ágiles</b><span>Uso de SCRUM y Kanban para mejorar la gestión de proyectos y garantizar entregas incrementales.</span></div>
+      <div class="st rv"><span class="si" data-ic="grad"></span><b>Capacitación y formación continua</b><span>Programas de actualización en nuevas tecnologías y mejores prácticas de desarrollo.</span></div>
+      <div class="st rv"><span class="si" data-ic="handshake"></span><b>Colaboración interdisciplinaria</b><span>Integración de equipos de desarrollo, diseño y gestión para una visión completa del producto.</span></div>
+      <div class="st rv"><span class="si" data-ic="deploy"></span><b>Automatización de pruebas y despliegue</b><span>Implementación de <abbr title="Integración y entrega/despliegue continuos">CI/CD</abbr> para optimizar la entrega de software.</span></div>
+    </div>
+
+    <h3 class="sub rv">Así recibimos y analizamos tus requerimientos</h3>
+    <ol class="flow rv" id="flow">
+      <li><span data-ic="docs"></span><b>Solicitud</b></li>
+      <li><span data-ic="plan"></span><b>Registro en el aplicativo</b></li>
+      <li><span data-ic="touch"></span><b>Casos de uso</b></li>
+      <li><span data-ic="func"></span><b>Pruebas unitarias</b></li>
+    </ol>
+  </div>
+</section>
+
+<div class="bigtype" aria-hidden="true"><div class="bt-row" data-bt="-1"><span>DISEÑAMOS</span><span class="o">PROBAMOS</span><span>ENTREGAMOS</span><span class="o">DISEÑAMOS</span><span>PROBAMOS</span></div><div class="bt-row" data-bt="1"><span class="o">SOFTWARE</span><span>CON</span><span class="o">SELLO</span><span>SENA</span><span class="o">SOFTWARE</span></div></div>
+
+<!-- ============ CALIDAD / TESTING ============ -->
+<section id="calidad" class="sec lab">
+  <video class="bgv" muted loop playsinline preload="none" data-src="media/testing.mp4" aria-hidden="true"></video>
+  <div class="bgv-shade"></div>
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">04 · Laboratorio de testing</span>
+      <h2 data-split>La calidad no es una etapa final: es parte de todo el camino</h2>
+      <p class="lead rv">Distinguimos cuatro enfoques de prueba para que sepas exactamente qué necesita tu software.</p>
+    </header>
+    <div class="lab-grid">
+      <div class="lab-main">
+      <div class="lab-info">
+        <div class="tabs" role="tablist" aria-label="Enfoques de prueba" id="labTabs"></div>
+        <div class="lab-panel glass" id="labPanel" role="tabpanel" aria-live="polite"></div>
+      </div>
+      <div class="lab-demo glass rv" aria-label="Demostración interactiva: caza los errores del código">
+        <div class="demo-top">
+          <span class="dots3"><i></i><i></i><i></i></span><span class="fname">carrito.js</span>
+          <button type="button" class="btn btn-sm" id="runTests">▶ Ejecutar pruebas</button>
+        </div>
+        <pre class="code" id="code" tabindex="0"></pre>
+        <div class="scan" id="scan" aria-hidden="true"></div>
+        <ul class="tests" id="tests"></ul>
+        <div class="score-row"><span class="score" id="score">0 / 4</span><span class="hint" id="labHint">1) Ejecuta las pruebas · 2) Haz clic en los fragmentos subrayados para corregirlos</span><button type="button" class="link" id="labReset">Reiniciar</button></div>
+      </div>
+      </div>
+      <div class="lab-stage" aria-hidden="true">
+        <div class="stage-hud glass"><small>Bugs capturados</small><b id="stageScore">0<i>/4</i></b><span id="stageMsg">El escudo espera tus correcciones</span></div>
+        <img class="mascot" id="mascot" src="img/mascota.png" alt="" loading="lazy" width="556" height="417">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMACIÓN ============ -->
+<section id="formacion" class="sec">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">05 · Compromiso con la formación</span>
+      <h2 data-split>Un laboratorio vivo donde también se aprende</h2>
+      <p class="lead rv">La UST facilita espacio y equipos para la formación e imparte transferencias de conocimiento y talleres que complementan el proceso de aprendizaje e incentivan la investigación.</p>
+    </header>
+    <div class="form-layout">
+    <div class="mosaic">
+      <figure class="m m1 tilt rv"><img src="img/formacion-taller.jpg" alt="Aprendices atentos durante una transferencia de conocimiento" loading="lazy" width="561" height="374"><figcaption>Transferencias de conocimiento y talleres</figcaption></figure>
+      <figure class="m m2 tilt rv"><img src="img/vr-chico.jpg" alt="Joven explorando realidad virtual con unas gafas de cartón" loading="lazy" width="587" height="619"><figcaption>Realidad virtual y tecnologías emergentes</figcaption></figure>
+      <div class="m m3 glass rv">
+        <h3><span data-ic="grad"></span> Prácticas laborales</h3>
+        <p>Aprendices de los programas de:</p>
+        <ul class="prog" id="prog"></ul>
+      </div>
+      <figure class="m m4 tilt rv"><img src="img/aprendiz.jpg" alt="Aprendiz sonriendo frente al computador en la UST" loading="lazy" width="304" height="540"><figcaption>Aprendices en práctica</figcaption></figure>
+      <figure class="m m5 tilt rv"><img src="img/practica-vr.jpg" alt="Aprendiz usando un visor de realidad virtual" loading="lazy" width="340" height="279"><figcaption>Imagen UST</figcaption></figure>
+    </div>
+    <aside class="form-stage" aria-hidden="true"><div class="stage-card glass"><span class="eyebrow">Aprendizaje en red</span><b>Aprendices, instructores, centros y empresas conectados</b><span>Cada nodo es una oportunidad de transferir conocimiento.</span></div></aside>
+    </div>
+    <p class="fine rv">Las actividades formativas se presentan como participación y experiencia de aprendizaje; no constituyen convocatorias abiertas.</p>
+  </div>
+</section>
+
+<!-- ============ TRAYECTORIA ============ -->
+<section id="trayectoria" class="sec sec-alt">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow rv">06 · Trayectoria e impacto</span>
+      <h2 data-split>Una década construyendo software con sello SENA</h2>
+    </header>
+    <div class="tray-grid">
+      <div class="seal rv" role="img" aria-label="Sello conmemorativo: 10 años, 2015 a 2025, Fábrica de Software, Centro de Servicios y Gestión Empresarial">
+        <svg viewBox="0 0 220 220" aria-hidden="true">
+          <defs><path id="circ" d="M110,110 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+          <g class="seal-ring"><text><textPath href="#circ" startOffset="0">FÁBRICA DE SOFTWARE · CENTRO DE SERVICIOS Y GESTIÓN EMPRESARIAL · 2015–2025 ·</textPath></text></g>
+          <circle cx="110" cy="110" r="62" class="seal-c"/>
+          <text x="110" y="122" text-anchor="middle" class="seal-n">10</text>
+          <text x="110" y="146" text-anchor="middle" class="seal-y">AÑOS</text>
+        </svg>
+      </div>
+      <div>
+        <div class="counters">
+          <div class="counter glass tilt rv"><b data-count="140">0</b><span>Servicios</span></div>
+          <div class="counter glass tilt rv"><b data-count="77">0</b><span>Aprendices</span></div>
+          <div class="counter glass tilt rv"><b data-count="2500">0</b><span>Aprendices en transferencias</span></div>
+          <div class="counter glass tilt rv"><b data-count="7">0</b><span>Programas de formación</span></div>
+        </div>
+        <p class="fine rv"><b>Indicadores UST · 2020–2024.</b> Cifras de la Unidad de Servicios Tecnológicos; no corresponden exclusivamente a la Fábrica de Software.</p>
+      </div>
+    </div>
+    <ol class="timeline rv">
+      <li><b>2015</b><span>Inicio del recorrido de la Fábrica de Software en el CESGE.</span></li>
+      <li><b>2020 – 2024</b><span>Indicadores UST: servicios, aprendices y programas de formación atendidos.</span></li>
+      <li><b>2025</b><span>Diez años de la Fábrica de Software · Centro de Servicios y Gestión Empresarial.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="sec contact">
+  <canvas class="net" id="netContact" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <header class="sec-head center">
+      <span class="eyebrow rv">07 · Contacto</span>
+      <h2 data-split>Cuéntanos tu necesidad</h2>
+      <p class="lead rv">Escríbenos y preparamos juntos la solución. Este formulario no guarda datos: arma un correo que envías desde tu propia cuenta.</p>
+    </header>
+    <div class="contact-grid">
+      <div class="c-info glass rv">
+        <div class="c-row"><span data-ic="mail"></span><div><small>Correo institucional</small><a href="mailto:serviciotecnologico@sena.edu.co" id="mailLink">serviciotecnologico@sena.edu.co</a></div><button type="button" class="copy" id="copyMail">Copiar</button></div>
+        <div class="c-row"><span data-ic="pin"></span><div><small>Ubicación</small><address>Carrera 57 #51-83<br>Torre Norte, tercer piso<br>Medellín, Antioquia</address></div></div>
+        <div class="c-row"><span data-ic="building"></span><div><small>Unidad</small><span>Unidad de Servicios Tecnológicos · Centro de Servicios y Gestión Empresarial · SENA</span></div></div>
+      </div>
+      <form class="c-form glass rv" id="cform" novalidate>
+        <div class="f2">
+          <label>Nombre <em>(opcional)</em><input type="text" id="fName" autocomplete="name" placeholder="Tu nombre u organización"></label>
+          <label>Tipo de interés
+            <select id="fType"><option>Servicio del portafolio</option><option>Formación o práctica</option><option>Alianza o proyecto</option><option>Otro</option></select></label>
+        </div>
+        <label>Servicio de interés <em>(opcional)</em><select id="fSvc"><option value="">Aún no lo sé</option></select></label>
+        <label>Tu necesidad<textarea id="fMsg" rows="4" placeholder="Cuéntanos brevemente qué quieres lograr. No incluyas datos sensibles ni contraseñas."></textarea></label>
+        <div class="f-actions"><a class="btn mag" id="fSend" href="mailto:serviciotecnologico@sena.edu.co">Abrir en mi correo <span data-ic="arrow"></span></a><button type="button" class="btn ghost" id="fCopy">Copiar mensaje</button></div>
+        <p class="fine" id="fNote" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><img src="img/sena-logo.png" alt="SENA" width="44" height="43"><div><b>Fábrica de Software de Antioquia</b><span>Unidad de Servicios Tecnológicos · CESGE · SENA</span></div></div>
+    <div><small>Contacto</small><a href="mailto:serviciotecnologico@sena.edu.co">serviciotecnologico@sena.edu.co</a><span>Cra 57 #51-83, Torre Norte, piso 3 · Medellín</span></div>
+    <div><small>Aviso</small><span>Contenido informativo basado en el portafolio de la UST. Servicios, tarifas y condiciones sujetos a validación institucional.</span></div>
+  </div>
+  <p class="foot-copy">Propuesta de sitio informativo · Última revisión: octubre de 2026</p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
